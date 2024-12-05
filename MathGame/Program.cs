@@ -1,12 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-using System.Numerics;
 
 Console.WriteLine("Hello, Welcome to the math game! What is your name?: ");
 
 string? name = Console.ReadLine();
 var date = DateTime.UtcNow;
-int score;
+
 List<string> games = new List<string>();
 Console.WriteLine($"Welcome {name}, it is {date.DayOfWeek}.\n");
 
@@ -24,7 +23,7 @@ while (true)
 
     if (selection == "1")
     {
-        newGame();
+        NewGame();
         Console.Clear();
         
     } else
@@ -39,7 +38,7 @@ while (true)
     }
 }
 
-void newGame()
+void NewGame()
 {
     Console.WriteLine("--------------------------------------------------");
 
@@ -61,25 +60,25 @@ void newGame()
             case "a":
 
                 Console.WriteLine("Addition Game Selected");
-                games.Add($"{DateTime.Now} - Addition: Score={runAGame('+')}");
+                games.Add($"{DateTime.Now} - Addition: Score={RunAGame('+')}");
                 return;
                 
             case "s":
 
                 Console.WriteLine("Subtraction Game Selected");
-                games.Add($"{DateTime.Now} - Subtraction: Score={runAGame('-')}");
+                games.Add($"{DateTime.Now} - Subtraction: Score={RunAGame('-')}");
                 return;
                 
             case "m":
 
                 Console.WriteLine("Multiplication Game Selected");
-                games.Add($"{DateTime.Now} - Multiplication: Score={runAGame('*')}");
+                games.Add($"{DateTime.Now} - Multiplication: Score={RunAGame('*')}");
                 return;
                 
             case "d":
 
                 Console.WriteLine("Division Game Selected");
-                games.Add($"{DateTime.Now} - Division: Score={runAGame('/')}");
+                games.Add($"{DateTime.Now} - Division: Score={RunAGame('/')}");
                 return;
                 
 
@@ -93,7 +92,7 @@ void newGame()
     }
 }
 
-int runAGame(char op)
+int RunAGame(char op)
 {
     Console.Clear();
     Console.WriteLine("Answer the following. You get a point for each problem correct.");
@@ -161,20 +160,4 @@ int runAGame(char op)
 
 }
 
-void runSub()
-{
-    Console.WriteLine("Answer the following. You get a point for each problem correct.");
-
-}
-
-void runMult()
-{
-    Console.WriteLine("Answer the following. You get a point for each problem correct.");
-
-    }
-
-void runDiv()
-{
-    Console.WriteLine("Answer the following. You get a point for each problem correct.");
-}
 
